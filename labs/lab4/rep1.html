@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Web Page</title>
+    <style>
+        /* Định dạng cho toàn trang */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        /* Thanh điều hướng */
+        nav {
+            background-color: while;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 20px;
+        }
+        nav ul li a {
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        /* Logo và tên trang */
+        .header {
+            display: flex;             
+            align-items: center;   
+            padding: 20px 20px;  
+        }
+        .header img {
+            width: 50px;
+            margin-right: 20px;
+        }
+        .header h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+        /* Bảng nội dung */       
+        .content-box {
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+           padding: 20px;
+           border: 1px solid #ddd;
+           margin: 20px;
+           border-radius: 8px;
+           background-color: #f9f9f9;
+           position: relative;
+           flex-direction: row;
+        }
+        .content-left {
+           flex: 1;
+           display: flex;
+           flex-direction: column; 
+           margin: 0;
+           padding-left: 20px;
+        }
+        .content-right {
+           flex: 2;
+           display: flex;
+           align-items: center;
+           padding: 20px;
+        }
+        .icon {
+           margin-right: 10px;
+        }
+        .icon-image {
+           width: 35px; 
+        }
+        .text-content {
+           display: flex; 
+           flex-direction: column; 
+        }
+        .content-center {
+           display: flex;
+           align-items: center;
+           font-size: 18px; 
+        }
+        .streak-info {
+           position: absolute;
+           display: flex;
+           align-items: center;
+           font-size: 18px;
+           right: 40%;
+           
+        }
+        .streak-icon {
+           width: 50px;
+           margin-right: 10px;
+        }
+        q {
+           margin: 10px 0; 
+           color: #666;
+        }
+        .progress-info{
+           position: absolute; 
+           display: flex;
+           flex-direction: row; /* Đặt theo chiều dọc */ 
+           right:20%;      
+            .circle-chart {
+               width: 50px; /* Đặt chiều rộng của ảnh */
+               height: 50px; /* Đặt chiều cao của ảnh */              
+        }
+
+        }
+        
+        .activity-link {
+            position: absolute; /* Đặt liên kết ở vị trí tuyệt đối trong khung */
+            bottom: 10px;
+            right: 30px; 
+            color: blue;
+            text-decoration: none; 
+        }    
+        .activity-link:hover {
+            text-decoration: underline;
+        }
+        .courses {
+            display: flex;
+            gap: 20px;
+        }
+        h2 {
+      text-indent: 20px;  
+    }
+    .course {
+        background-color: #fff;
+        padding: 10px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        width: 30%;
+        text-align: center;
+    }      
+    .scroll-container {      
+        padding: 10px;
+        width: 100vw;       
+        overflow-x: auto;    
+        white-space: nowrap;               
+        border: 1px solid #ccc;
+        padding: 10px;
+    }  
+    
+    .recommendations {
+        margin-bottom: 20px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);    
+    }
+    .h1{
+        color: #333;
+        display: inline;
+        margin: 0;
+    }
+    .edit-link {
+        display: inline;
+        margin-left: 10px; 
+        font-size: 16px; 
+        color: #0056b3;
+    }
+    .edit-link:hover {
+        text-decoration: underline;
+    }
+    .h2 {
+        text-align: left;
+        color: #333;
+        text-align: center;
+        flex-direction: row;
+    }    
+    .carousel {
+        display: flex;
+        justify-content: space-between;
+        overflow: hidden;
+        padding: 20px;
+    }
+    .card {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        width: 22%;
+        padding: 15px;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .card img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+    .card h2 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    .card p {
+        color: #666;
+    }
+    .personalize {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 30px;
+        text-align: center;
+        margin-top: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        line-height: 2;
+    }
+    .personalize button {
+        background-color: #333;
+        border: none;
+        padding: 10px 20px;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        line-height: 2;
+    }
+    .personalize button:hover {
+        background-color: #1c1b1a;
+    }
+    .image-container {
+        display: flex;            
+        justify-content: center;  
+    }
+    .image-container img {
+        width: 45px;              
+       height: auto;           
+    }    
+    </style>  
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">Business Operations</a></li>
+            <li><a href="#">Cloud Computing</a></li>
+            <li><a href="#">Cybersecurity</a></li>
+            <li><a href="#">Data Science</a></li>
+            <li><a href="#">Development</a></li>
+            <li><a href="#">IT Operations</a></li>
+            <li><a href="#">Language Learning</a></li>
+            <li><a href="#">Leadership & Management</a></li>
+            <li><a href="#">Maketting</a></li>
+        </ul>
+    </nav>
+    <!-- Logo và tên trang -->
+    <div class="header">
+        <img src="img\logo.png" alt="Logo">
+        <h1>Welcome back, Dang Thi My Hanh</h1>
+    </div>
+    <!-- Bảng nội dung -->
+    <div class="content-box">
+        <div class="content-left">
+            <h2>Weekly streak</h2>
+            <p>One ring down, one to go. Keep it up!</p>
+        </div>
+        <div class="content-center">
+            <div class="streak-info">
+                <img class="streak-icon" src="img\lua.png" alt="Streak Icon">
+                <div class="text-content">
+                    <span>2 weeks</span>
+                    <q>Current streak</q>
+                </div>
+            </div>           
+            <div class="progress-info">
+                <img class="circle-chart" src="img\tron.png"  alt="Progress Chart">
+                <div class="text-content">
+                    <span>11/30 course min</span>
+                    <span>4/1 visit</span>
+                    <small>Oct 13 - 19</small>
+                </div>              
+            </div>
+            <div class="activity-link">
+                <a href="#">See all activity</a>
+            </div>
+        </div>
+    </div>
+    <h2>Pick up where you left off</h2>
+    <div class="courses">
+        <nav>
+            <ul>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">Learning paths</a></li>
+                <li><a href="#">Certification</a></li>
+            </ul>
+        </nav>    
+    </div> 
+    <div class="scroll-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/ZHPa0xb9tPc?si=OSFFI26W-ySXeHN0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/S4OoOVWPA94?si=XwMMUZRIIGp5Q09k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div> 
+    <section class="recommendations">
+        <h1>Based on your certification interests, we recommend</h1>
+        <span><a href="#" class="edit-link">Edit certification interests</a></span>
+        <div class="carousel">
+            <div class="card">
+                <iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe>
+                <h2>Oracle Certified Associate Java Programmer (OCAJP) 1Z0-808</h2>
+                <p>Andrii Piatakha, Learn IT University</p>
+                <p><strong>4.6</strong> ⭐ (438)</p>
+            </div>
+            <div class="card">
+                <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQhucLs5kbq51RfPPiJCrtTR2krEjEG3_cqqPOCqu3VNCfgmqAu" class="wETe9b jFVN1" aria-hidden="true" data-iml="7171.599999904633">
+                <h2>Oracle Java Certification - Pass the Associate 1Z0-808 Exam</h2>
+                <p>Tim Buchalka's Learn Programming Academy</p>
+                <p><strong>4.6</strong> ⭐ (5,906)</p>
+            </div>
+            <div class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPsZl6HO2VtmVHUnR1FXGUyZPtxy9r1nxR7_gtVrTj10qo5CvU" class="wETe9b jFVN1" aria-hidden="true" data-iml="6056.799999952316">
+                <h2>Complete Java SE 8 Developer Bootcamp - OCA Prep Included</h2>
+                <p>Intertech Training, Jeff Jensen</p>
+                <p><strong>4.6</strong> ⭐ (9,726)</p>
+            </div>
+            <div class="card">
+                <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRInko3fetxDIPxa4qqOp3S6gpRiZ5TvTHqHL8NAf1yeX-pe70x" class="wETe9b jFVN1" aria-hidden="true" data-iml="6044.399999856949">
+                <h2>Spring Professional Certification Exam Tutorial - Module 02</h2>
+                <p>Dominik Cebula</p>
+                <p><strong>4.6</strong> ⭐ (1,121)</p>
+            </div>
+        </div>
+    </section>   
+    <section class="personalize">
+        <div class="image-container"> <img src="img\user.png" alt="Logo"></div>    
+        <h2>Personalize your learning experience</h2>
+        <p>Add your occupation and interests to get better content recommendations.</p>
+        <button>Add occupation and interests</button>
+    </section>
+</body>
+</html>

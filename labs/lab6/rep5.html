@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Recommendations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin: 0 auto;
+            padding: 20px;
+        }
+        /* Thanh điều hướng */
+        .navbar {
+            display: flex;
+            justify-content: flex-start;
+            gap: 20px;            
+            padding: 10px 20px;
+        }
+        .navbar a {
+            display: flex;
+            justify-content: center; /* Căn giữa theo chiều ngang */
+            align-items: center; /* Căn giữa theo chiều dọc */
+            border-radius: 40px; /* Thay đổi giá trị này để điều chỉnh độ bo tròn */
+            color: #000;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 10px 20px;
+            font-weight: bold;
+            text-transform: capitalize;
+            background-color: #e5e9ef;
+            cursor: pointer;
+            border: 1.5px solid #000; /* Viền trắng */
+            cursor: pointer; /* Thay đổi con trỏ khi hover */
+            
+        }
+        .navbar a:hover {
+            background-color: #000;
+            border-radius: 40px;
+            text-align: left; 
+            
+        }   
+        .navbar-pill-btn {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+            display: inline-flex; /* Đảm bảo nội dung hiển thị đúng */
+            flex-direction: column;
+            align-items: center;
+            width: auto; /* Để chiều rộng phù hợp với nội dung */
+            border-radius: 40px; /* Độ bo tròn */
+            
+        }
+
+        .navbar-pill-btn h5, .navbar-pill-btn span {
+            margin: 0;              /* Xóa khoảng cách mặc định */
+            display: block;         /* Hiển thị mỗi dòng trên một hàng riêng */
+                /* Căn giữa chữ */
+        }
+
+        .navbar-pill-btn h5 {
+            font-size: 1em;         /* Kích thước cho tiêu đề */
+            font-weight: bold;      /* In đậm cho tiêu đề */
+            white-space: nowrap;
+        }
+
+        .navbar-pill-btn span {
+            font-size: 0.8em;       /* Kích thước nhỏ hơn cho văn bản phụ */
+            font-weight: 400;       /* Không in đậm cho văn bản phụ */
+            color: #bbb;            /* Màu chữ nhạt hơn */
+        }  
+        /* Hover cho nút .navbar-pill-btn */
+.navbar-pill-btn:hover {
+    background-color: #000;
+    color: #fff;
+    border-radius: 40px; /* Giữ bo tròn khi hover */
+}
+
+.navbar-pill-btn:hover h5, .navbar-pill-btn:hover span {
+    color: #fff; /* Giữ màu trắng cho chữ khi hover */
+}
+
+        .carousel {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 20px 0;
+        }
+        .card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 150%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        .card img {
+            width: 100%;
+            height: 150px;
+            border-radius: 5px 5px 0 0;
+        }
+        .card-content {
+            padding: 15px;
+        }
+        .card h2 {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #333;
+        }
+        .card p {
+            color: #666;
+            font-size: 14px;
+            margin: 5px 0;
+        }
+        .rating {
+            font-weight: bold;
+            color: #000;
+        }
+        .price {
+            font-weight: bold;
+            color: #000;
+        }
+        .bestseller {
+            color: #000;
+            background-color: #ff9900;
+            padding: 2px 5px;
+            font-size: 12px;
+            border-radius: 3px;
+            display: inline-block;
+            margin-top: 7px;
+            font-weight: bold; 
+        }
+        .show-button {
+            display: inline-block;
+            padding: 10px 20px;
+            border: 1px solid #333;
+            background-color: #fff;
+            color: #333;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Thanh điều hướng -->
+        <div class="navbar">
+            <a href="rep6.html" class="navbar-pill-btn"> <h5>web development</h5><span>13.3M+ learners</span></a>
+            <a href="#" class="navbar-pill-btn"<h5>JavaScipt</h5><span>17.7M+ learnes</span>
+            <a href="#" class="navbar-pill-btn"<h5>ReactJS</h5><span>7M+ learners</span></a>
+            <a href="#" class="navbar-pill-btn"<h5>Angular</h5><span>4M+ learners</span></a>
+            <a href="#" class="navbar-pill-btn"<h5>Java</h5><span>15.5M+ learners</span></a>
+            <a href="#" class="navbar-pill-btn"<h5>Android Development</h5><span>8M+ learners</span></a>
+            <a href="#" class="navbar-pill-btn"<h5>iOS development</h5><span>4M+ learners</span></a>
+            <a href="#" class="navbar-pill-btn"<h5>CSS</h5><span>8M+ learners</span></a>
+        </div>
+        <section class="carousel">
+            <div class="card">
+                <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTxHyfVIOiHN4cI9h9wvxCrFVUS7Z9Q-A_tDVx1zlLrZbzOaFGw" alt="Course Image">
+                <div class="card-content">
+                    <h2>The Complete 2024 Web Development Bootcamp</h2>
+                    <p>Dr. Angela Yu, Developer and Lead Instructor</p>
+                    <p><span class="rating">4.7</span> ⭐⭐⭐⭐ (409,451)</p>
+                    <p class="price">đ1,699,000</p>
+                    <span class="bestseller">Bestseller</span>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTeorDkY96UJJzSBMNCiEAqb6Tv7dy4grS0VC6YZgtSpCaCIY7T" alt="Course Image">
+                <div class="card-content">
+                    <h2>The Web Developer Bootcamp 2024</h2>
+                    <p>Colt Steele</p>
+                    <p><span class="rating">4.7</span> ⭐⭐⭐⭐ (276,674)</p>
+                    <p class="price">đ2,399,000</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://media.licdn.com/dms/image/v2/D4D12AQFzfW63wdtQ4w/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1699051676991?e=2147483647&v=beta&t=4uA_84V4HLIL12NXg9ziWFALRklNHN2IwlqK0SKbGhw" alt="Course Image">
+                <div class="card-content">
+                    <h2>Web Development Masterclass - Online Certification Course</h2>
+                    <p>YouAccel Training</p>
+                    <p><span class="rating">4.3</span> ⭐⭐⭐⭐ (10,000)</p>
+                    <p class="price">đ1,499,000</p>
+                </div>
+            </div>   
+            <div class="card">
+                <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQDdoAi-O6KkSbvbq3YLmib6OlzIthSOAYABMyt8igi7AvY2QP-" alt="Course Image">
+                <div class="card-content">
+                    <h2>Practical Web Development: 22 Courses in 1</h2>
+                    <p>Creative Online School</p>
+                    <p><span class="rating">4.2</span> ⭐⭐⭐⭐ (4,353)</p>
+                    <p class="price">đ449,000</p>
+                </div>
+            </div>
+        </section>
+        <a href="#" class="show-button">Show all Web Development courses</a>
+    </div>
+</body>
+</html>

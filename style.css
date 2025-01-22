@@ -1,0 +1,19 @@
+
+.image-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%; 
+    gap: 10px; 
+}
+
+.img-shadow{
+    width: 180%; 
+    height: auto; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng khi hover */
+
+}
+.test-container{
+    display: flex;
+    flex-direction: column;
+    width: 70%; 
+}

@@ -1,0 +1,193 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 500px;
+    max-width: 1000px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    transition: all 0.5s ease-in-out;
+}
+
+.login-form, .register-form {
+    width: 50%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+    background: white;
+}
+
+/* Form đăng nhập ban đầu ở bên trái */
+.login-form {
+    transform: translateX(0);
+    z-index: 2;
+}
+
+/* Form đăng ký ban đầu bị ẩn bên phải */
+.register-form {
+    transform: translateX(100%);
+    z-index: 1;
+}
+
+/* Toggle Panel */
+.toggle-panel {
+    width: 50%;
+    background: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    border-top-left-radius: 200px; 
+    border-bottom-left-radius: 200px;
+    transition: transform 0.5s ease-in-out;
+    z-index: 3;
+}
+.toggle-panel{
+    transform: translateX(100%);
+}
+.toggle-panel #tieude2{
+    display: none;
+}
+.toggle-panel #login-btn{
+    display: none;
+}
+.container.show-register #login-btn{
+    display: flex;
+    justify-content: center;
+}
+.container.show-register #register-btn{
+    display: none;
+}
+.container.show-register #tieude2{
+    display: flex;
+}
+.container.show-register #register-btn #tieude1{
+    display: none;
+}
+.container.show-register #tieude1{
+    display: none;
+}
+
+/* Khi class "show-register" được thêm vào, chuyển form */
+.container.show-register .login-form {
+    transform: translateX(-200%); /* Ẩn đăng nhập */
+}
+
+.container.show-register .register-form {
+    transform: translateX(100%); /* Hiển thị form đăng ký */
+}
+.container.show-register .toggle-panel {
+    transform: translateX(0%);
+    border-top-right-radius: 200px; 
+    border-bottom-right-radius: 200px;
+    border-top-left-radius: 0px;  
+    border-bottom-left-radius: 0px;
+}
+
+.toggle-panel button {
+    width: 150px;
+    padding: 10px;
+    border: none;
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px 0;
+    transition: background-color 0.3s ease;
+}
+
+.toggle-panel button:hover {
+    background-color: #c0c0c0;
+}
+
+/* Các biểu tượng mạng xã hội */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    color: black;
+    font-size: 24px;
+    margin: 0 10px;
+}
+
+.social-icons .google {
+    color: #db4437;
+}
+
+.social-icons .facebook {
+    color: #4267B2;
+}
+
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+p {
+    margin-top: 15px;
+    font-size: 14px;
+    color: gray;
+}
+
+p span {
+    color: #007BFF;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+p span:hover {
+    text-decoration: underline;
+}

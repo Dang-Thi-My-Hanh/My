@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập & Đăng ký</title>
+    <link rel="stylesheet" href="login-signup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container" id="container">
+        <!-- Đăng nhập -->
+        <div class="form-container login-form">
+            <h1>Đăng nhập</h1>
+            <div class="social-icons">
+                <a href="#" class="icon-logo google"><i class="fa-brands fa-google-plus-g g"></i></a>
+                <a href="#" class="icon-logo facebook"><i class="fa-brands fa-facebook-f f"></i></a>
+            </div>
+            <input type="text" placeholder="UserName">
+            <input type="password" placeholder="Password">
+            <button>Đăng nhập</button>
+            <p>Bạn chưa có tài khoản? <span id="show-register">Đăng ký</span></p>
+        </div>
+
+        <!-- Toggle Panel -->
+        <div class="toggle-panel">
+            <h2 id="tieude1">Chào mừng, trở lại!</h2>
+            <p id="tieude1">Nhập thông tin cá nhân để sử dụng các tính năng của trang web</p>
+            <h2 id="tieude2">Chào bạn!</h2>
+            <p id="tieude2">Đăng ký với thông tin cá nhân để sử dụng các tính năng của trang web</p>
+            <button id="login-btn">Đăng nhập</button>
+            <button id="register-btn">Đăng ký</button>
+            <button id="home-btn">Trang chủ</button>
+        </div>
+
+        <!-- Đăng ký -->
+        <div class="form-container register-form">
+            <h1>Tạo tài khoản</h1>
+            <div class="social-icons">
+                <a href="#" class="icon-logo google"><i class="fa-brands fa-google-plus-g g"></i></a>
+                <a href="#" class="icon-logo facebook"><i class="fa-brands fa-facebook-f f"></i></a>
+            </div>
+            <input type="email" placeholder="Email">
+            <input type="text" placeholder="UserName">
+            <input type="password" placeholder="Password">
+            <button>Đăng ký</button>
+            <p>Bạn đã có tài khoản? <span id="show-login">Đăng nhập</span></p>
+        </div>
+    </div>
+
+    <script src="login-signup.js"></script>
+</body>
+</html>

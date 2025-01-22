@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Learning</title>   
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;      
+            align-items: flex-start;
+        }      
+        header h1 {
+            margin: 0;
+            font-size: 1.5em;
+            margin-right: 20px;
+        }      
+        header a {
+            color: #fff;
+            text-decoration: underline;
+            margin-left: 20px;
+        }
+        /* Thanh điều hướng */
+        .navbar {
+            display: flex;
+            justify-content: flex-start;
+            gap: 20px;
+            background-color: #444;
+            padding: 10px 20px;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 10px;
+            font-weight: bold;
+        }
+        .navbar a:hover {
+            background-color: #555;
+            border-radius: 5px;
+        }       
+        .filters {
+            display: flex;
+            justify-content: flex-start;
+            gap: 10px;
+            padding: 7px 20px;
+            background-color: #f8f8f8;
+            height: 50px;
+            margin-top: 10px;
+        }
+        .sort {
+            color:#555;
+            margin-bottom: 5px; /* Khoảng cách giữa tiêu đề và các nút */
+            flex-direction: column;
+        }
+        .sort-buttons, .filter-buttons {
+            display: flex; /* Sắp xếp các nút theo hàng ngang */
+            gap: 10px; /* Khoảng cách giữa các nút */
+            background-color: white;
+
+        }
+        .filters button, .filters input {
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 5px;
+            background-color: #fff;
+            cursor: pointer;
+            border: 1px solid black;
+            font-weight: bold;
+        }
+        .filters reset{
+            padding:20px, 10px;
+            font-size: 1rem;
+            color:#676565;
+            
+            margin-top: 10px;          
+        }
+        .filters reset {
+            flex: 1;
+            font-weight: bold;
+        }
+        .filters input {
+            flex: 1;
+            max-width: 200px;
+        }
+        filters input, .search button {
+            background-color: black; /* Màu nền nút */
+            color: white; /* Màu chữ nút */
+            border: none; /* Bỏ viền cho nút */
+            border-radius: 5px; /* Bo tròn góc nút */
+            padding: 10px 15px; /* Khoảng cách bên trong nút */
+            cursor: pointer; /* Hiển thị con trỏ chuột như bàn tay */
+        }
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .course-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+        .course-item:hover {
+            transform: scale(1.05);
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Tỷ lệ 16:9 */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .course-item h3 {
+            font-size: 1.1em;
+            margin: 10px 0;
+            color: #333;
+        }
+        .course-item p {
+            color: #666;
+            margin: 5px 0;
+        }
+        .progress {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #888;
+        }
+        .progress span {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Learning</h1>
+        <p><strong>87hr 36min </strong>watched |<u><a href="#">View all activity.</a></u></p>
+    </header>
+
+    <!-- Thanh điều hướng -->
+    <div class="navbar">
+        <a href="rep1.html">All courses</a>
+        <a href="rep2.html">Learning paths</a>
+        <a href="#">Certifications</a>
+        <a href="#">Archived</a>
+        <a href="#">Learning tools</a>
+    </div>
+
+    <div class="filters">
+        <div class="sort">Sort by
+            <div class="sort-buttons"> 
+                <button>Recently Accessed</button>
+            </div>
+        </div>
+        <div class="sort">Filter by
+            <div class="sort-buttons"> 
+                <button>Categories</button>
+                <button>Progress</button>
+                <button>Instructor</button>
+                <reset>Reset</reset>
+                <input type="text" placeholder="Search my courses">
+                <button>Tìm</button> 
+            </div>
+        </div>
+    </div>
+    <main class="course-grid">
+        <!-- Course item template -->
+        <div class="course-item">
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/KQef64Kxp6U?si=meVmZWAVPLdudc6G" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>          
+            <h3>Tự học các kiến thức cơ bản của lập trình C chỉ trong 1 giờ</h3>
+            <p>Vũ Nguyễn Coder</p>
+            <div class="progress">
+                <span>100% complete</span>
+                <span>Leave a rating</span>
+            </div>
+        </div>
+        <div class="course-item">
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/3gtOAlcovoQ?si=l7InM6a0L3p04bzL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <h3>[Khóa học lập trình Java đến OOP] | HowKteam</h3>
+            <p>K team</p>
+            <div class="progress">
+                <span>97% complete</span>
+                <span>Leave a rating</span>
+            </div>
+        </div>
+        <div class="course-item">
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/9tQ-GGE010s?si=hiTlWG5IN4UeYvS7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>    
+            </div>
+            
+            <h3>Tự học java siêu tốc dễ hiểu cho người mới Cài đặt intellij idea</h3>
+            <p>gà Lại Lập Trìnhr</p>
+            <div class="progress">
+                <span>100% complete</span>
+                <span>Leave a rating</span>
+            </div>
+        </div>
+        <div class="course-item">
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/oFgg7K2tpfk?si=_E2BBj6qdSpTahwA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <h3>Lập Trình Cơ Bản PYTHON Tự Học Cho Người Mới Bắt Đầu</h3>
+            <p>Dũng Lại Lập Trình</p>
+            <div class="progress">
+                <span>90% complete</span>
+                <span>Leave a rating</span>
+            </div>
+        </div>
+        <div class="course-item">
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/KsVqBIWtRec?si=pCbSN3hgb21ERri0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>           
+            <h3>Tự học lập trình C++ siêu dễ hiểu</h3>
+            <p>Vũ Nguyễn Coder</p>
+            <div class="progress">
+                <span>96% complete</span>
+                <span>Leave a rating</span>
+            </div>
+        </div>
+        <div class="course-item">
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/gkA3-d7AUa8?si=DX6PaSRRFf_4P4j8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>               
+            </div>
+            
+            <h3>Como hospedar BOT DISCORD de graça na ABC CLOUD</h3>
+            <p>Zenin</p>
+            <div class="progress">
+                <span>100% complete</span>
+                <span>Leave a rating</span>
+            </div>
+        </div>
+        </div><div class="course-item">
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/bPTONsV6q0U?si=ws6qZGKtZqHf5cNJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>    
+            </div>
+            
+            <h3>Módulos em typescript - Curso completo de Typescript em NodeJs</h3>
+            <p>Rincko Dev</p>
+            <div class="progress">
+                <span>100% complete</span>
+                <span>Leave a rating</span>
+            </div>
+        </div><div class="course-item">
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/-6mLVq_howY?si=5ngaWBxVfWQFiAXC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>             
+            </div>
+            
+            <h3>Những lỗi cơ bản hay gặp ở người mới cần biết</h3>
+            <p>evondev</p>
+            <div class="progress">
+                <span>90% complete</span>
+                <span>Leave a rating</span>
+            </div>
+        </div><div class="course-item">
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/FllEXZV1Z58?si=8o1DfsIJpdqJoWXV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>    
+            </div>
+            
+            <h3>[C++]. Thuật Toán Sắp Xếp Chèn | Sắp Xếp Nổi Bọt | Sắp Xếp Chọn | Sắp Xếp Đếm Phân Phối</h3>
+            <p>28tech</p>
+            <div class="progress">
+                <span>100% complete</span>
+                <span>Leave a rating</span>
+            </div>
+        </div><div class="course-item">
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/efJr9woV-74?si=6ipi_0lbsyCtDAPd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>    
+            </div>
+            <h3>Thuật toán sắp xếp dễ học nhất đối với người mới bắt đầu lập trình</h3>
+            <p>Vũ Nguyễn Coder</p>
+            <div class="progress">
+                <span>100% complete</span>
+                <span>Leave a rating</span>
+            </div>
+        </div>
+        </div><div class="course-item">
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/iKiWe7Otd3k?si=FvRpRpWPgJ8fftxg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+            <h3>Product Costs and Starting Inventory Levels | Getting Started with inFlow</h3>
+            <p>inFlow Inventory</p>
+            <div class="progress">
+                <span>95% complete</span>
+                <span>Leave a rating</span>
+            </div>
+        </div> 
+        </div><div class="course-item">
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/s_Ntt6eTn94?si=DLPWpCSKKrM3brzD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>    
+            </div>
+            <h3>Subnet Mask - Explained</h3>
+            <p>PowerCert Animated Videos</p>
+            <div class="progress">
+            <span>99% complete</span>
+            <span>Leave a rating</span>
+        </div>
+    </div>
+
+
+        <!-- Add more .course-item divs as needed -->
+    </main>
+</body>
+</html>
