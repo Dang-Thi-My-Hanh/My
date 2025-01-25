@@ -29,7 +29,7 @@ function showDesign4(button) {
             <img src="img/lab4Giay2.png" alt="Design Image">
         </div>
         <div class="button-group">
-            <button class="download-btn" onclick="downloadFile4()">Download</button>44
+            <button class="download-btn" onclick="downloadFile4()">Download</button>
         </div>
     `);
     button.closest('.list-item').appendChild(popupContainer);

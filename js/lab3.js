@@ -1,8 +1,6 @@
 function showOptions3(event, element) {
     event.preventDefault();
     const optionsContainer = element.nextElementSibling;
-
-    // Hiển thị 3 nút Requirement, Design, Implement
     optionsContainer.innerHTML = `
         <div class="button-group">
             <button class="requirement-btn" onclick="showRequirement3(this)">Requirement</button>
@@ -25,8 +23,7 @@ function showDesign3(button) {
     clearPopups3(button);
     const popupContainer = createPopupContainer3(`
         <div class="preview-container">
-            <img src="img/lab2Giay.png" alt="Design Image ">
-            <img src="img/lab2F.png" alt="Design Image ">
+            <img src="img/lab3G.png" alt="Design Image ">
         </div>
         <div class="button-group">
             <button class="download-btn" onclick="downloadFile()">Download</button>
@@ -47,7 +44,6 @@ function closePopup3(button) {
 }
 
 function clearPopups3(button) {
-    // Xóa tất cả các popup trong list-item hiện tại
     const listItem = button.closest('.list-item');
     const popups = listItem.querySelectorAll('.popup-container');
     popups.forEach(popup => popup.remove());

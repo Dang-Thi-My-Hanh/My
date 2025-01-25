@@ -30,7 +30,6 @@ function showDesign1(button) {
         </div>
         <div class="button-group">
             <button class="download-btn" onclick="downloadFile()">Download</button>
-            <button class="figma-btn" onclick="showfigma()">Figma</button>
         </div>
     `);
     button.closest('.list-item').appendChild(popupContainer);

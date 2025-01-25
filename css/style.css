@@ -6,12 +6,7 @@
     gap: 10px; 
        
 }
-.preview-container img {
-    max-width: 100%; /* Ảnh không vượt quá khung cha */
-    max-height: 100%; /* Ảnh không vượt quá chiều cao khung cha */
 
-object-fit: cover; /* Giữ tỷ lệ ảnh và cắt ảnh nếu cần để vừa khung */
-}
 
 .image-container img {
     height: auto; /* Duy trì tỷ lệ ảnh */
