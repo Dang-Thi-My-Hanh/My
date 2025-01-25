@@ -6,17 +6,15 @@
     gap: 10px; 
        
 }
-
-
 .image-container img {
-    height: auto; /* Duy trì tỷ lệ ảnh */
-    border: 1px solid #ccc; /* Tùy chọn: viền ảnh */
-    border-radius: 8px; /* Tùy chọn: bo góc ảnh */
+    height: auto; 
+    border: 1px solid #ccc; 
+    border-radius: 8px;
 }
 .img-shadow{
     max-width: 100%;  
     height: auto; 
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng khi hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 
 }
 .test-container{

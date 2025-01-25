@@ -13,7 +13,7 @@
       justify-content: center;
       align-items: center;
       height: 120vh;
-      background-color: #e6f7ff;
+      background-color: #b0c0c7;
     }
     .form-container {
       background-color: white;
@@ -81,12 +81,28 @@
       background-color: #4caf50;
       color: white;
     }
+    .button-group a {
+        text-decoration: none;
+        display: inline-block;
+        padding: 10px 10px;
+        border-radius: 5px;
+        color: white;
+        background-color: rgb(91, 91, 93);
+        margin-right: 10px;
+        text-align: center;
+    }
+    .button-group a:hover {
+        background-color: darkblue;
+    }
   </style>
 </head>
 <body>
   <div class="form-container">
     <h1>Create Account</h1>
     <form>
+      <div class="button-group">
+        <a href="lab.html" class="button-btn">Black</a>
+      </div>
       <label for="username">Username</label>
       <input type="text" id="username" placeholder="Enter your username">
 
@@ -120,11 +136,24 @@
       <input type="text" id="last-updated-at" placeholder="">
 
       <div class="button-group">
-        <button type="submit" class="submit-btn" disabled>Create Account</button>
-        <button type="button" class="cancel-btn">Cancel</button>
-      </div>
+        <a href="lab.html" class="submit-btn">Account</a>
+        <a href="lab.html" class="cancel-btn">Cancel</a>
+    </div>
+    
     </form>
   </div>
+
+<script>
+    function redirectToAccount() {
+        // Chuyển hướng tới trang Account
+        window.location.href = "account.html"; // Thay "account.html" bằng đường dẫn thực tế
+    }
+
+    function redirectToCancel() {
+        // Chuyển hướng tới trang khác (nếu cần)
+        window.location.href = "cancel.html"; // Thay "cancel.html" bằng đường dẫn thực tế
+    }
+</script>
 
   <script>
     const showPasswordCheckbox = document.getElementById('show-password');

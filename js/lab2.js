@@ -61,6 +61,12 @@ function createPopupContainer2(content) {
     return popup;
 }
 
+function closeAllPopups() {
+    // Đóng tất cả popup trên toàn trang
+    const allPopups = document.querySelectorAll('.popup-container');
+    allPopups.forEach(popup => popup.remove());
+}
+
 function downloadFile2() {
     const link = document.createElement('a');
     link.download = 'design_image.png';

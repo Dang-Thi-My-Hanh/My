@@ -14,6 +14,7 @@ function showOptions1(event, element) {
 }
 
 function showRequirement1(button) {
+    closeAllPopups(); // Đóng tất cả popup trước khi hiển thị
     clearPopups1(button);
     const popupContainer = createPopupContainer1(`
         <img src="img/requirement1.png" alt="Requirement Image">
@@ -22,6 +23,7 @@ function showRequirement1(button) {
 }
 
 function showDesign1(button) {
+    closeAllPopups(); // Đóng tất cả popup trước khi hiển thị
     clearPopups1(button);
     const popupContainer = createPopupContainer1(`
         <div class="preview-container">
@@ -29,15 +31,18 @@ function showDesign1(button) {
             <img src="img/lab1F.png" alt="Design Image ">
         </div>
         <div class="button-group">
-            <button class="download-btn" onclick="downloadFile()">Download</button>
+            <button class="download-btn" onclick="downloadFile1()">Download</button>
         </div>
     `);
     button.closest('.list-item').appendChild(popupContainer);
 }
+
 function showfigma1() {
     window.open('#', '_blank');
 }
+
 function showImplement1() {
+    closeAllPopups(); // Đóng tất cả popup trước khi hiển thị
     window.open('lab1.html', '_blank');
 }
 
@@ -51,6 +56,12 @@ function clearPopups1(button) {
     const listItem = button.closest('.list-item');
     const popups = listItem.querySelectorAll('.popup-container');
     popups.forEach(popup => popup.remove());
+}
+
+function closeAllPopups1() {
+    // Đóng tất cả popup trên toàn trang
+    const allPopups = document.querySelectorAll('.popup-container');
+    allPopups.forEach(popup => popup.remove());
 }
 
 function createPopupContainer1(content) {

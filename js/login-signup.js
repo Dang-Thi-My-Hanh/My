@@ -10,9 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
     container.classList.remove('show-register');
 });
 
-// Sự kiện khi nhấn vào nút "Đăng nhập" trong Toggle Panel
 loginBtn.addEventListener('click', () => {
+    console.log('Nút đăng nhập đã được nhấn');
     container.classList.remove('show-register');
+    window.location.href = 'lab.html'; // Chuyển hướng đến trang mới
 });
 
 // Sự kiện khi nhấn vào nút "Đăng ký" trong Toggle Panel
@@ -28,5 +29,4 @@ showRegisterBtn.addEventListener('click', () => {
 // Sự kiện khi nhấn vào nút chuyển sang "Đăng nhập"
 showLoginBtn.addEventListener('click', () => {
     container.classList.remove('show-register');
-});
-
+}); // Đóng dấu ngoặc ở đây
