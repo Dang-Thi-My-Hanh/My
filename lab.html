@@ -32,13 +32,33 @@
     <div class="container my-5">
         <h1 class="text-center">Lab Exercises</h1>
         <div class="list-group mt-4">
-            <a href="QuanLyHieuThuoc.html" class="list-group-item list-group-item-action">Lab 1: User Interface Design</a>
-            <a href="Login.html" class="list-group-item list-group-item-action">Lab 2: Login form</a>
-            <a href="labs\lab1\QuanLyHieuThuoc.html" class="list-group-item list-group-item-action">Lab 3: Available Materials</a>
-            <a href="rep1.html" class="list-group-item list-group-item-action">Lab 4: Learning Dashboard</a>
-            <a href="rep51.html" class="list-group-item list-group-item-action">Lab 5: My learning</a>
-            <a href="rep61.html" class="list-group-item list-group-item-action">Lab 6: coderbyte</a>
+            <div class="list-item">
+                <a class="list-group-item list-group-item-action" onclick="showOptions1(event, this)">Lab 1: User Interface Design</a>
+                <div class="options-container"></div>
+            </div>
+            <div class="list-item">
+                <a class="list-group-item list-group-item-action" onclick="showOptions2(event, this)">Lab 2: Login form</a>
+                <div class="options-container"></div>
+            </div>
+            <div class="list-item">
+                <a class="list-group-item list-group-item-action" onclick="showOptions3(event, this)">Lab 3: Available Materials</a>
+                <div class="options-container"></div>
+            </div>
+            <div class="list-item">
+                <a class="list-group-item list-group-item-action" onclick="showOptions4(event, this)">Lab 4: Learning Dashboard</a>
+                <div class="options-container"></div>
+            </div>
+            <div class="list-item">
+                <a  class="list-group-item list-group-item-action" onclick="showOptions5(event, this)">Lab 5: My learning</a>
+                <div class="options-container"></div>
+            </div>
+            <div class="list-item">
+                <a class="list-group-item list-group-item-action" onclick="showOptions6(event, this)">Lab 6: coderbyte</a>
+                <div class="options-container"></div>
+            </div>
         </div>
+<div id="buttonContainer" class="mt-3"></div>
+
     </div>
     
 
@@ -48,6 +68,12 @@
     </footer>
 
     <!-- Bootstrap JS -->
+    <script src="js\lab.js"></script>
+    <script src="js\lab2.js"></script>
+    <script src="js\lab3.js"></script>
+    <script src="js\lab4.js"></script>
+    <script src="js\lab5.js"></script>
+    <script src="js\lab6.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

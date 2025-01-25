@@ -153,6 +153,18 @@
         .progress span {
             cursor: pointer;
         }
+        .image-container {
+            display: flex; /* Sử dụng flexbox để xếp hàng ảnh */
+            justify-content: space-around; /* Căn giữa và tạo khoảng cách đều giữa các ảnh */
+            margin: 20px; /* Khoảng cách bên ngoài cho container */
+        }
+
+        .image-container img {
+            max-width: 100%; /* Đảm bảo ảnh không vượt quá chiều rộng của container */
+            height: auto; /* Giữ tỉ lệ ảnh */
+            border: 2px solid black; /* Viền cho ảnh */
+            border-radius: 5px; /* Bo tròn góc ảnh */
+        }
     </style>
 </head>
 <body>
@@ -187,9 +199,14 @@
             </div>
         </div>
     </div>
+    <div class="image-container">      
+        <img src="img\img2.png" alt="Ảnh 1">
+        <img src="img\img2.png" alt="Ảnh 2">
+    </div>
     <main class="course-grid">
-        <!-- Course item template -->
+        <!-- Course item template -->  
         <div class="course-item">
+            
             <div class="video-container">
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/KQef64Kxp6U?si=meVmZWAVPLdudc6G" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>          
@@ -321,6 +338,7 @@
             <span>99% complete</span>
             <span>Leave a rating</span>
         </div>
+       
     </div>
 
 

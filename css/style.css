@@ -1,13 +1,25 @@
 
 .image-container {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     width: 50%; 
     gap: 10px; 
+       
+}
+.preview-container img {
+    max-width: 100%; /* Ảnh không vượt quá khung cha */
+    max-height: 100%; /* Ảnh không vượt quá chiều cao khung cha */
+
+object-fit: cover; /* Giữ tỷ lệ ảnh và cắt ảnh nếu cần để vừa khung */
 }
 
+.image-container img {
+    height: auto; /* Duy trì tỷ lệ ảnh */
+    border: 1px solid #ccc; /* Tùy chọn: viền ảnh */
+    border-radius: 8px; /* Tùy chọn: bo góc ảnh */
+}
 .img-shadow{
-    width: 180%; 
+    max-width: 100%;  
     height: auto; 
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng khi hover */
 
@@ -17,3 +29,57 @@
     flex-direction: column;
     width: 70%; 
 }
+.list-group {
+    width: 400px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+}
+
+.list-group-item {
+    display: block;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #f8f9fa;
+    color: #000;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.options-container, .popup-container {
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    position: relative;
+}
+
+.popup-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.popup-container .button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.popup-container button, .options-container button {
+    padding: 5px 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.design-btn { background-color: #007bff; color: white; }
+.implement-btn { background-color: #28a745; color: white; }
+.requirement-btn { background-color: #ffc107; color: black; }
+.back-btn { background-color: #dc3545; color: white; }
+.download-btn { background-color: #17a2b8; color: white; }

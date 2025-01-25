@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 120vh;
+      background-color: #e6f7ff;
+    }
+    .form-container {
+      background-color: white;
+      border-radius: 8px;
+      padding: 20px;
+      width: 400px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .form-container h1 {
+      margin-bottom: 20px;
+      font-size: 20px;
+    }
+    .form-container label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+    .form-container input,
+    .form-container select,
+    .form-container button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+    .form-container input[type="checkbox"] {
+      width: auto;
+      margin-right: 10px;
+    }
+    .form-container .preview {
+      width: 100%;
+      height: 150px;
+      border: 1px dashed #ddd;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+      color: #aaa;
+      margin-bottom: 15px;
+      border-radius: 5px;
+    }
+    .form-container .button-group {
+      display: flex;
+      justify-content: space-between;
+    }
+    .form-container .button-group button {
+      width: 48%;
+      padding: 10px;
+      font-size: 14px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .form-container .button-group button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+    .form-container .button-group .cancel-btn {
+      background-color: #f44336;
+      color: white;
+    }
+    .form-container .button-group .submit-btn {
+      background-color: #4caf50;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h1>Create Account</h1>
+    <form>
+      <label for="username">Username</label>
+      <input type="text" id="username" placeholder="Enter your username">
+
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Enter your password">
+      <label>
+        <input type="checkbox" id="show-password"> Show Password
+      </label>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" placeholder="Enter your email">
+
+      <label for="fullname">Full Name (Optional)</label>
+      <input type="text" id="fullname" placeholder="Enter your full name">
+
+      <label for="role">Role</label>
+      <select id="role">
+        <option value="">Select a role</option>
+        <option value="admin">Admin</option>
+        <option value="user">User</option>
+      </select>
+
+      <label for="profile-picture">Profile Picture</label>
+      <input type="file" id="profile-picture">
+      <div class="preview">Preview</div>
+
+      <label for="account-created-at">Account Created At</label>
+      <input type="text" id="account-created-at" placeholder="">
+
+      <label for="last-updated-at">Last Updated At</label>
+      <input type="text" id="last-updated-at" placeholder="">
+
+      <div class="button-group">
+        <button type="submit" class="submit-btn" disabled>Create Account</button>
+        <button type="button" class="cancel-btn">Cancel</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    const showPasswordCheckbox = document.getElementById('show-password');
+    const passwordInput = document.getElementById('password');
+
+    showPasswordCheckbox.addEventListener('change', () => {
+      if (showPasswordCheckbox.checked) {
+        passwordInput.type = 'text';
+      } else {
+        passwordInput.type = 'password';
+      }
+    });
+  </script>
+</body>
+</html>
