@@ -26,7 +26,6 @@ function showDesign2(button) {
     const popupContainer = createPopupContainer2(`
         <div class="preview-container">
             <img src="img/lab2Giay.png" alt="Design Image ">
-            <img src="img/lab2F.png" alt="Design Image ">
         </div>
         <div class="button-group">
             <button class="download-btn" onclick="downloadFile()">Download</button>
